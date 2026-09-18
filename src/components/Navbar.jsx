@@ -90,7 +90,7 @@ export function Navbar({ activeTab, onNavigate, totalShowsCount }) {
             className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-rose-600 to-red-600 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-rose-950/50 transition hover:from-rose-500 hover:to-red-500 active:scale-95"
           >
             <Flame className="h-4 w-4 text-amber-300" />
-            [ Movies ]
+            Movies 
           </button>
         </div>
 
