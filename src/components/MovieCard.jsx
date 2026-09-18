@@ -106,7 +106,7 @@ export const MovieCard= ({ show, onSelect }) => {
             className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-800/90 py-2.5 text-xs font-semibold text-rose-300 transition-all hover:bg-rose-600 hover:text-white active:scale-98"
           >
             <Film className="h-3.5 w-3.5" />
-            <span>[ See Details ]</span>
+            <span> See Details... </span>
           </button>
         </div>
       </div>
