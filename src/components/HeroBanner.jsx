@@ -52,7 +52,7 @@ export const HeroBanner = ({
             className="group flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-red-600 px-8 py-3.5 text-base font-bold text-white shadow-xl shadow-rose-900/40 transition hover:from-rose-500 hover:to-red-500 active:scale-95 sm:w-auto"
           >
             <Play className="h-5 w-5 fill-white" />
-            <span>[ Explore Now ]</span>
+            <span> Explore Now </span>
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </button>
 
