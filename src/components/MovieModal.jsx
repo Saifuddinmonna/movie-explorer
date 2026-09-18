@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X, Star, Calendar, Globe, Clock, Tv, ExternalLink, Bookmark, Check } from 'lucide-react';
 import { stripHtml, getReleaseYear, formatRating, FALLBACK_BACKDROP, FALLBACK_POSTER } from '../services/tvMazeApi';
 
@@ -49,7 +49,7 @@ export function MovieModal({ show, onClose }) {
       <div
         id="movie-details-modal"
         className="relative z-10 max-h-[92vh] w-full max-w-3xl overflow-y-auto rounded-3xl border border-slate-700/80 bg-slate-900 shadow-2xl shadow-black/80"
-        onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside modal
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar with Close Button (✕) */}
         <div className="sticky top-0 z-20 flex items-center justify-between border-b border-slate-800/80 bg-slate-900/90 px-6 py-3.5 backdrop-blur-md">
@@ -60,18 +60,19 @@ export function MovieModal({ show, onClose }) {
             </span>
           </div>
 
-          {/* Close button [ ✕ ] matching wireframe */}
+          {/* Top Close [ ✕ ] Button */}
           <button
             id="modal-close-top-btn"
             onClick={onClose}
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-slate-300 transition-colors hover:bg-rose-600 hover:text-white"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/80 bg-slate-800 text-slate-300 transition-all hover:border-rose-500 hover:bg-rose-600 hover:text-white cursor-pointer"
             title="Close modal (Esc)"
+            aria-label="Close modal"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
-        {/* Backdrop Image Section matching wireframe */}
+        {/* Backdrop Image Section */}
         <div className="relative aspect-[16/9] max-h-72 w-full overflow-hidden bg-slate-950">
           <img
             src={backdropUrl}
@@ -108,7 +109,7 @@ export function MovieModal({ show, onClose }) {
 
         {/* Modal Body */}
         <div className="p-6 sm:p-8 space-y-6">
-          {/* Metadata Row matching wireframe: ⭐ Rating: 8.5 | 📅 Release: 2024 */}
+          {/* Metadata Row */}
           <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-slate-800 bg-slate-950/60 p-4 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-amber-400 font-bold flex items-center gap-1.5">
@@ -145,7 +146,7 @@ export function MovieModal({ show, onClose }) {
             )}
           </div>
 
-          {/* Overview / Summary matching wireframe */}
+          {/* Overview / Summary */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-rose-400 mb-2">
               Overview:
@@ -155,7 +156,7 @@ export function MovieModal({ show, onClose }) {
             </div>
           </div>
 
-          {/* Additional Info Grid (Genre, Network/Country, Schedule, Status) */}
+          {/* Additional Info Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
             <div className="rounded-xl border border-slate-800 bg-slate-950/50 p-3.5 space-y-1.5">
               <p className="font-semibold text-slate-400 flex items-center gap-1.5">
@@ -209,7 +210,7 @@ export function MovieModal({ show, onClose }) {
 
               <button
                 onClick={() => setIsSaved(!isSaved)}
-                className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-medium transition ${
+                className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-medium transition cursor-pointer ${
                   isSaved
                     ? 'bg-emerald-600/20 text-emerald-400 border border-emerald-500/40'
                     : 'bg-slate-800 text-slate-300 border border-slate-700 hover:text-white'
@@ -220,14 +221,14 @@ export function MovieModal({ show, onClose }) {
               </button>
             </div>
 
-            {/* Bottom Close Button matching wireframe: [ ❌ Close ] */}
+            {/* Clean Bottom Close Button */}
             <button
               id="modal-close-bottom-btn"
               onClick={onClose}
-              className="flex items-center gap-2 rounded-xl bg-slate-800 px-5 py-2.5 text-xs font-bold text-slate-200 transition hover:bg-rose-600 hover:text-white active:scale-95"
+              className="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800 px-5 py-2.5 text-xs font-semibold text-slate-200 transition-all hover:border-rose-500 hover:bg-rose-600 hover:text-white active:scale-95 cursor-pointer shadow-sm"
             >
               <X className="h-4 w-4" />
-              <span>[ ❌ Close ]</span>
+              <span>Close</span>
             </button>
           </div>
         </div>
